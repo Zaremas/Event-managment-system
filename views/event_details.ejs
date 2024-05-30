@@ -1,0 +1,13 @@
+<%- include('partials/header') %>
+
+<h2><%= event.name %></h2>
+<p>Date: <%= event.date %></p>
+<p>Description: <%= event.description %></p>
+<p>Location: <%= event.place %></p>
+<p>Spots Available: <%= event.spotsAvailable %>/<%= event.spotsOverall %></p>
+
+<form action="/events/<%= event.id %>/register" method="post">
+    <button type="submit" <%= event.spotsAvailable === 0 ? 'disabled' : '' %>>Register</button>
+</form>
+
+<%- include('partials/footer') %>

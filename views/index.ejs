@@ -1,0 +1,16 @@
+<%- include('partials/header') %>
+
+<h2>Upcoming Events</h2>
+<ul>
+    <% events.forEach(event => { %>
+        <a href="/events/<%= event.id %>">
+            <li href="/events/<%= event.id %>">
+                <H4><%= event.name %></H4> <br>
+                <%= event.date %> - <%= event.place %> - Seats Available: <%= event.spotsAvailable %>/<%= event.spotsOverall %>
+                <p><%=event.description%></p>
+            </li>
+        </a> 
+    <% }) %>
+</ul>
+
+<%- include('partials/footer') %>

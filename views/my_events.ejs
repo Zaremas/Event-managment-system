@@ -1,0 +1,18 @@
+<%- include('partials/header') %>
+<h1>My Events</h1>
+<% if (events.length > 0) { %>
+  <ul>
+    <% events.forEach(event => { %>
+      <li>
+        <h2><%= event.name %></h2>
+        <p><%= event.description %></p>
+        <p><strong>Date:</strong> <%= event.date.toDateString() %></p>
+        <p><strong>Spots Available:</strong> <%= event.spotsAvailable %> / <%= event.spotsOverall %></p>
+      </li>
+    <% }) %>
+  </ul>
+<% } else { %>
+  <p>You have not registered for any events.</p>
+<% } %>
+<p><a href="/">Back to Home</a></p>
+<%- include('partials/footer') %>
