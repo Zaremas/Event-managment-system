@@ -21,12 +21,11 @@ class EventService {
 
   async getEventById(id) {
     try {
-        console.log(id);
-      const event = await Event.findById(id);
-      console.log(event);
-      return event;
+
+        const event = await Event.findById(id);
+        return event;
     } catch (error) {
-      throw new Error('Error fetching event');
+        throw new Error('Error fetching event');
     }
   }
 
